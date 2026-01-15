@@ -1,0 +1,118 @@
+// Signature du document
+:organisation: CoFELI
+:copyright: CoFELI
+:entrepot: CoFELI
+:depot: Scriptorum
+:branche: v100
+:sigle: TD_00
+:titre: Présentation de l'environnement de travail
+:sous_titre: Introduction
+:keywords: bases de données, programmation, code, outils
+:revnumber: 1.0.0.a
+:revdate: 2025-12-15
+:version-label: document de travail, ne pas citer
+:author: Christina KHNAISSER
+:email: christina.khnaisser@usherbrooke.ca
+//:author2: Luc LAVOIE
+//:email2: luc.lavoie@usherbrooke.ca
+
+// Contexte de support du document
+include::../../../../../rep_CoLOED_AsciiDoc.adoc[]
+:rep_Scriptorum: {rep_racine}/CoFELI/Scriptorum
+
+// Document bimodal PDF (texte, diaporama) et HTML5 (hypertexte).
+// Les attributs format_DIAPO, format_TEXTE et format_HYPER
+// permettent de particulariser le document au besoin.
+
+ifndef::format_effectif[:format_effectif: RAPPORT]
+ifdef::format_DIAPO[include::{rep_format}/DIAPO_en-tete.adoc[]]
+ifndef::format_DIAPO[include::{rep_format}/{format_effectif}_en-tete.adoc[]]
+
+[introduction]
+== Introduction
+
+Le présent document présente les objectifs du travail dirigé d'initiation à l'environnement de travail pour le développement de bases de données. 
+
+== Présentation
+
+=== Énoncé
+
+Le travail a pour but de mettre en pratique les étapes techniques permettant de réaliser un travail 
+à l’aide du langage SQL dans le cadre de l’activité IFT187. 
+Il répond aux objectifs spécifiques suivants :
+
+* à prendre en main l’environnement des laboratoires ;
+* à faire exécuter différents programmes SQL fournis ;
+* à faire quelques modifications simples à ces programmes et en constater le résultat ;
+//* à s’initier à un ensemble d’outils prescrits.
+
+=== Environnement de travail
+
+* Système de gestion de bases de données : _PostgreSQL_
+* Atelier de développement : _DataGrip_ 
+* Un outil de création de documents : _Asciidoc_
+* Un jeu de données de référence contient les fichiers suivants : 
+
+** initialisation du schéma (Universite_ini.sql),
+** création des domaines et des tables (Universite_cre.sql),
+** suppression du tables et domaines (Universite_drop.sql),
+** retrait des données du schéma (Universite_del.sql),
+** jeu de données comportant des insertions de départ (Universite_ins.sql),
+** jeu de données pour les tests unitaires pour les domaines (Universite_domain.sql)
+** jeu de données pour les tests unitaires comportant des insertions valides (Universite_ins-val.sql),
+** jeu de données pour les tests unitaires comportant des insertions invalides (Universite_ins-inv.sql),
+//** requêtes représentatives (Universite_req.sql).
+
+ifdef::format_DIAPO[<<<]
+== Plan de travail
+
+=== Modalité de travail
+Le travail doit être réalisé individuellement.
+
+Pour ce travail dirigé, la personne étudiante peut utiliser les ressources du laboratoire. 
+Elle peut aussi utiliser ses ressources propres.
+Dans ce dernier cas, elle est libre d’utiliser la plateforme et les outils de son choix, dans la mesure où les programmes livrés sont exécutables sans modifications dans l’environnement départemental.
+
+ifdef::format_DIAPO[<<<]
+=== Livrable
+
+Le livrable prévu est le code source comprenant les modifications demandées en laboratoire.
+
+La remise d'effectue sur Trunin [https://turnin.dinf.usherbrooke.ca].
+
+=== Évaluation
+
+La remise du livrable vaut deux points.
+
+=== Découpage des activités
+Le travail est balisé par les étapes suivantes:
+
+. présentation des logiciels par la personne enseignante ; 
+. création d'une connexion au SGBD ;
+
+====
+Host : bd-info1.dinf.fsci.usherbrooke.ca +
+User : <CIP> +
+Password : <mot-de-passe-CIP> +
+Database : <CIP>db
+====
+
+. exécution des programmes fournis en l’état ;
+. réalisation des modifications qui seront demandées ;
+//. révision des programmes pour en retirer les erreurs.
+
+[bibliography]
+== Références
+
+PostgreSQL::
+https://www.postgresql.fr,
+https://www.postgresql.org
+
+DataGrip::
+https://www.jetbrains.com/datagrip/
+
+Asciidoc::
+https://docs.asciidoctor.org/asciidoc/latest/
+
+// =================================== FIN =====================================
+include::{rep_format}/RAPPORT_en-pied.adoc[]
